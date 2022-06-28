@@ -16,11 +16,10 @@ const DashboardPage = () => {
     const {appState, toggleSideBar} = useContext(AppContext)
 
     return (
-        <Paper sx={{ height: '100vh' }}>
+        <Paper sx={{ minHeight: '100vh' }}>
             <DashboardNavbar toggleSideBar={toggleSideBar} />
             <MenuDrawer toggleSideBar={toggleSideBar} appState={appState}/>
             <h1>Dashboard!</h1>
-
         </Paper>
     )
 }

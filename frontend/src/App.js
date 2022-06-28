@@ -4,6 +4,7 @@ import SignUpPage from './Pages/SignUpPage/SignUpPage.js'
 import Dashboard from './Pages/DashboardPage/DashboardPage.js'
 import MetricsPage from './Pages/MetricsPage/MetricsPage.js'
 import QuotesPage from './Pages/QuotesPage/QuotesPage.js'
+import CreateQuotePage from './Pages/CreateQuotePage/CreateQuotePage.js'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Routes, Route } from "react-router-dom";
 import { AppProvider } from './ContextProvider'
@@ -47,7 +48,7 @@ function App() {
               <Route path='/dashboard' element={<Dashboard />}></Route>
               <Route path='/metrics' element={<MetricsPage />}></Route>
               <Route path='/quotes' element={<QuotesPage />}></Route>
-  
+              <Route path='/create-quote' element={<CreateQuotePage />}></Route>
           </Routes>
         </div>
       </ThemeProvider>

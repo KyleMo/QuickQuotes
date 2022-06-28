@@ -1,10 +1,10 @@
 
-import React, { useContext } from 'react'
+//import React, { useContext } from 'react'
 import { Stack, AppBar, Box, Typography} from '@mui/material';
 import LogInIconText from '../LogInIconText/LogInIconText.js'
 import { useTheme } from '@mui/material/styles';
 import { Link, useLocation } from 'react-router-dom'
-import AppContext from '../../ContextProvider.js'
+//import AppContext from '../../ContextProvider.js'
 import './navbar.css'
 
 
@@ -12,8 +12,7 @@ const Navbar = () => {
 
     const theme = useTheme()
     const location = useLocation()
-    const { userProfile } = useContext(AppContext)
-    console.log(userProfile)
+    //const { userProfile } = useContext(AppContext)
 
     return (
         <AppBar className='navbar' sx={{ maxWidth: "1500px", marginBottom: "20px"}} position='sticky' color='primary'>
