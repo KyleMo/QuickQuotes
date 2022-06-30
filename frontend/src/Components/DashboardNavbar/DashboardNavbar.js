@@ -4,12 +4,11 @@ import ConfirmationPrompt from '../ConfirmationPrompt/ConfirmationPrompt.js'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom'
 
-const DashboardNavbar = ({ toggleSideBar, setFormData }) => {
+const DashboardNavbar = ({ toggleSideBar, setFormData, showConfirmPromptBool, setShowConfirmPromptBool }) => {
 
     const navigate = useNavigate()
     const location = useLocation()
 
-    const [showConfirmPromptBool, setShowConfirmPromptBool] = React.useState(false)
     
     const handleConfirmed = (createNewQuoteBool) => {
         if (createNewQuoteBool){

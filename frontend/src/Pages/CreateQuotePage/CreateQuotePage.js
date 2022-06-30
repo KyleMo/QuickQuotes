@@ -12,6 +12,7 @@ const CreateQuotePage = () => {
     //---------------
     //state variables
 
+    const [showConfirmPromptBool, setShowConfirmPromptBool] = React.useState(false)
     const {appState, toggleSideBar} = useContext(AppContext)
     const [formData, setFormData] = React.useState({
         projectName: '',
@@ -39,14 +40,20 @@ const CreateQuotePage = () => {
 
     return (
         <Paper sx={{ minHeight: '100vh' }}>
-            <DashboardNavbar setFormData={setFormData} toggleSideBar={toggleSideBar} formData={formData}/>
+            <DashboardNavbar 
+                setFormData={setFormData} 
+                toggleSideBar={toggleSideBar} 
+                formData={formData}
+                showConfirmPromptBool={showConfirmPromptBool}
+                setShowConfirmPromptBool={setShowConfirmPromptBool}
+            />
             <MenuDrawer toggleSideBar={toggleSideBar} appState={appState}/>
             <form>
                 <h1>New Quote</h1>
-                <input type='text' value={formData.projectName} name='projectName' onChange={handleChange} placeholder='Project name' />
-                <input type='text' value={formData.projectCustomer} name='projectCustomer' onChange={handleChange} placeholder='Client Name' />
-                <input type='text' value={formData.projectValue} name='projectValue' onChange={handleChange} placeholder='$ Value' />
-                <select value={formData.projectStatus} name='projectStatus' onChange={handleChange}>
+                <input type='text' disabled={showConfirmPromptBool} value={formData.projectName} name='projectName' onChange={handleChange} placeholder='Project name' />
+                <input type='text' disabled={showConfirmPromptBool} value={formData.projectCustomer} name='projectCustomer' onChange={handleChange} placeholder='Client Name' />
+                <input type='text' disabled={showConfirmPromptBool} value={formData.projectValue} name='projectValue' onChange={handleChange} placeholder='$ Value' />
+                <select value={formData.projectStatus} disabled={showConfirmPromptBool} name='projectStatus' onChange={handleChange}>
                     <option>Draft</option>
                     <option>Sent</option>
                     <option>Accepted</option>
